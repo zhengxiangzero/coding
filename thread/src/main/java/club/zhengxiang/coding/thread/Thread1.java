@@ -86,5 +86,4 @@ public class Thread1 {
     /**
      * 方法三：使用信号量 Semaphore
      */
-
 }
