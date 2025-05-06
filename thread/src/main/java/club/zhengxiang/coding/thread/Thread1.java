@@ -45,9 +45,10 @@ public class Thread1 {
     private static void method2() {
         new Thread(() -> {
             while (count.get() <= 200) {
+                System.out.println("----等待获取锁 " + Thread.currentThread().getName() + ": " + count.get());
                 synchronized(lock) {
                     lock.notify();
-                    System.out.println(Thread.currentThread().getName() + "0: " + count.getAndIncrement());
+                    System.out.println(Thread.currentThread().getName() + ": " + count.getAndIncrement());
                     try {
                         lock.wait();
                     } catch (InterruptedException e) {
@@ -57,15 +58,16 @@ public class Thread1 {
             }
             System.out.println(Thread.currentThread().getName() + ": 退出");
             synchronized (lock) {
-                lock.notify();
+                lock.notifyAll();
             }
         }).start();
 
         new Thread(() -> {
             while (count.get() <= 200) {
+                System.out.println("----等待获取锁 " + Thread.currentThread().getName() + ": " + count.get());
                 synchronized(lock) {
                     lock.notify();
-                    System.out.println(Thread.currentThread().getName() + "1: " + count.getAndIncrement());
+                    System.out.println(Thread.currentThread().getName() + ": " + count.getAndIncrement());
                     try {
                         lock.wait();
                     } catch (InterruptedException e) {
@@ -75,7 +77,7 @@ public class Thread1 {
             }
             System.out.println(Thread.currentThread().getName() + ": 退出");
             synchronized (lock) {
-                lock.notify();
+                lock.notifyAll();
             }
         }).start();
     }
