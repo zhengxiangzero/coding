@@ -82,4 +82,9 @@ public class Thread1 {
         }).start();
     }
 
+
+    /**
+     * 方法三：使用信号量 Semaphore
+     */
+
 }
