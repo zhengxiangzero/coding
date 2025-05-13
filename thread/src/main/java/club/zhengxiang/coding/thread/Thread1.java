@@ -18,7 +18,8 @@ public class Thread1 {
 
         // method1();
         // method2();
-        method3();
+        // method3();
+        method32();
     }
 
     /**
@@ -132,6 +133,47 @@ public class Thread1 {
                 }
             }
         }
+    }
+
+    /**
+     * 方法三-2：使用两个 Semaphore 严格交替打印
+     */
+    private static void method32() {
+        // 两个信号量，总共有1个许可，保证只有一个线程执行
+        Semaphore semaphore1 = new Semaphore(1);
+        Semaphore semaphore2 = new Semaphore(0);
+
+        new Thread(() -> {
+            while (true) {
+                try {
+                    semaphore1.acquire();
+                    if (count.get() > 200) {
+                        // 处理边界竞态条件，打印 201
+                        semaphore2.release();
+                        break;
+                    }
+                    System.out.println(Thread.currentThread().getName() + ": " + count.getAndIncrement());
+                    semaphore2.release();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        new Thread(() -> {
+            while (true) {
+                try {
+                    semaphore2.acquire();
+                    if (count.get() > 200) {
+                        semaphore1.release();
+                        break;
+                    }
+                    System.out.println(Thread.currentThread().getName() + ": " + count.getAndIncrement());
+                    semaphore1.release();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
 }
