@@ -20,7 +20,7 @@ public class Send {
              Channel channel = connection.createChannel()) {
             // declare 幂等，不存在则创建
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            String message = "Hello World!222";
+            String message = "Hello World!777";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes(StandardCharsets.UTF_8));
             System.out.println(" [x] Sent '" + message + "'");
         }

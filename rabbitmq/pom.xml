@@ -3,14 +3,34 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<!--    <parent>-->
+<!--        <groupId>club.zhengxiang</groupId>-->
+<!--        <artifactId>coding</artifactId>-->
+<!--        <version>1.0-SNAPSHOT</version>-->
+<!--    </parent>-->
     <parent>
-        <groupId>club.zhengxiang</groupId>
-        <artifactId>coding</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <!-- 使用 Spring Boot 的父 POM -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/> <!-- 如果父 POM 不在项目根目录，去掉 relativePath -->
     </parent>
 
     <groupId>club.zhengxiang.coding</groupId>
     <artifactId>rabbitmq</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>springamqp-publisher</module>
+        <module>springamqp-consumer</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
@@ -20,18 +40,41 @@
             <version>5.20.0</version>
         </dependency>
 
-        <!-- Slf4j 日志 -->
+        <!-- spring-amqp，包含 RabbitMQ -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+            <version>3.2.5</version>
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!-- Slf4j 日志 -->
+        <!-- 版本太低，使用默认 spring boot bom 版本 -->
+        <!-- <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency> -->
+
+        <!-- 与 Logback 冲突 -->
+        <!-- <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
+        </dependency> -->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+            <!-- 只在编译与测试时有效，当我们项目打包成 *.jar 的时候并不会打入进去 -->
+            <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <properties>

@@ -4,3 +4,10 @@
 > 系统版本：MacOS 13.6.6 
 ### 1. [官网 HelloWorld 示例](./src/main/java/club/zhengxiang/coding/rabbitmq/helloworld/)
 * [RabbitMQ tutorial - "Hello World"](https://www.rabbitmq.com/tutorials/tutorial-one-java)
+### 2. Spring AMQP 示例：[Publisher](./springamqp-publisher)、[Consumer](./springamqp-consumer)
+* 发送消息：RabbitTemplate
+  * RabbitTemplate 注入过程
+    1. **Spring Boot 自动配置**：Spring Boot 的自动配置机制会根据类路径中的库和你应用中的配置自动创建和配置 beans；引入spring-boot-starter-amqp 后，Spring Boot 将会启用对 RabbitMQ 的支持并根据配置创建 RabbitTemplate bean
+    2. **条件性配置**：Spring Boot 使用 @ConditionalOnMissingBean 注解来确保只有在没有定义相同类型的 bean 时才会创建默认的 RabbitTemplate bean；可以在配置类中定义一个 RabbitTemplate bean，这样 Spring Boot 就不会创建默认的 RabbitTemplate
+    3. **依赖注入**：应用启动时，Spring 的依赖注入机制会扫描所有的 @Autowired 注解，并尝试为它们找到合适的 bean；如果 ApplicationContext 中存在一个类型为 RabbitTemplate 的 bean，Spring 会自动将其注入
+* 接收消息：RabbitListener 非阻塞式监听
