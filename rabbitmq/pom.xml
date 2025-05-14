@@ -23,6 +23,8 @@
     <modules>
         <module>springamqp-publisher</module>
         <module>springamqp-consumer</module>
+        <module>work-publisher</module>
+        <module>work-consumer</module>
     </modules>
 
     <repositories>
