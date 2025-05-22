@@ -9,3 +9,4 @@ coding for work
 2. Spring AMQP 示例：[Publisher](./rabbitmq/springamqp-publisher)、[Consumer](./rabbitmq/springamqp-consumer)
 3. Work 模式：[Publisher](./rabbitmq/work-publisher)、[Consumer](./rabbitmq/work-consumer)
 4. Fanout 广播交换机：[Publisher](./rabbitmq/fanout-publisher)、[Consumer](./rabbitmq/fanout-consumer)
+5. Direct 路由交换机：[Publisher](./rabbitmq/direct-publisher)、[Consumer](./rabbitmq/direct-consumer)

@@ -19,3 +19,5 @@
 * fanout 交换机：将消息广播到所有绑定的队列
 * consumer: 一个队列对应多个消费者，其实是一个服务的多个实例，一条消息只被一个消费者处理就行
 * queue: 多个队列对应多个微服务，每个微服务都能收到消息
+### 5. Direct 路由交换机：[Publisher](./direct-publisher)、[Consumer](./direct-consumer)
+* 根据路由规则，交换机把消息推送到对应的队列，比较灵活

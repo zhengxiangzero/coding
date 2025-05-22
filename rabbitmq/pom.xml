@@ -27,6 +27,8 @@
         <module>work-consumer</module>
         <module>fanout-consumer</module>
         <module>fanout-publisher</module>
+        <module>direct-consumer</module>
+        <module>direct-publisher</module>
     </modules>
 
     <repositories>
