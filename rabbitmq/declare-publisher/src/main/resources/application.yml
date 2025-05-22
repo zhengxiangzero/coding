@@ -1,0 +1,10 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+spring:
+  rabbitmq:
+    host: localhost # 主机名
+    port: 5672 # 端口
+    virtual-host: /qmq # 虚拟主机，数据隔离
+    username: qixqi # 用户名
+    password: 1214 # 密码

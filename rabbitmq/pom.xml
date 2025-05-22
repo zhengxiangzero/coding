@@ -31,6 +31,8 @@
         <module>direct-publisher</module>
         <module>topic-publisher</module>
         <module>topic-consumer</module>
+        <module>declare-publisher</module>
+        <module>declare-consumer</module>
     </modules>
 
     <repositories>

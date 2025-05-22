@@ -11,3 +11,4 @@ coding for work
 4. Fanout 广播交换机：[Publisher](./rabbitmq/fanout-publisher)、[Consumer](./rabbitmq/fanout-consumer)
 5. Direct 路由交换机：[Publisher](./rabbitmq/direct-publisher)、[Consumer](./rabbitmq/direct-consumer)
 6. Topic 交换机：[Publisher](./rabbitmq/topic-publisher)、[Consumer](./rabbitmq/topic-consumer)
+7. 声明队列和交换机一：[Publisher](./rabbitmq/declare-publisher)、[Consumer](./rabbitmq/declare-consumer)

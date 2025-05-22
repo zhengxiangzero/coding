@@ -28,3 +28,12 @@
   * topic 交换机与队列绑定的 binding key 可以指定通配符
     * `#`：代表0个或多个单词
     * `*`：代表1个单词
+### 7. 声明队列和交换机一：[Publisher](./declare-publisher)、[Consumer](./declare-consumer)
+* [TopicConfiguration](./declare-consumer/src/main/java/club/zhengxiang/coding/rabbitmq/declare/config/TopicConfiguration.java)
+```java
+/**
+ * Configuration 类中，所有的 bean 方法，都会被 spring 动态代理，
+ * 调用该方法时，spring 首先检查，spring 容器中是否有对应的 bean，如果有，直接返回 bean，
+ * 如果没有，才会执行返回，创建 bean，并放到 spring 容器中。
+**/
+```
