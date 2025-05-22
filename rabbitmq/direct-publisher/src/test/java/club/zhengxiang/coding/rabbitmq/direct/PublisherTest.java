@@ -12,7 +12,7 @@ public class PublisherTest {
     private RabbitTemplate rabbitTemplate;
 
     @Test
-    public void sendMessage2Fanout() throws InterruptedException{
+    public void sendMessage2Direct() throws InterruptedException{
         final String EXCHANGE_NAME = "qixqi.direct";
         rabbitTemplate.convertAndSend(EXCHANGE_NAME, "blue", "Hello, blue!");
         rabbitTemplate.convertAndSend(EXCHANGE_NAME, "yellow", "Hello, yellow!");

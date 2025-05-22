@@ -29,6 +29,8 @@
         <module>fanout-publisher</module>
         <module>direct-consumer</module>
         <module>direct-publisher</module>
+        <module>topic-publisher</module>
+        <module>topic-consumer</module>
     </modules>
 
     <repositories>

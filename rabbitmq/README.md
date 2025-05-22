@@ -20,4 +20,11 @@
 * consumer: 一个队列对应多个消费者，其实是一个服务的多个实例，一条消息只被一个消费者处理就行
 * queue: 多个队列对应多个微服务，每个微服务都能收到消息
 ### 5. Direct 路由交换机：[Publisher](./direct-publisher)、[Consumer](./direct-consumer)
-* 根据路由规则，交换机把消息推送到对应的队列，比较灵活
+* 根据路由规则，交换机把消息推送到对应的队列，比 Fanout 灵活
+### 6. Topic 交换机：[Publisher](./topic-publisher)、[Consumer](./topic-consumer)
+* 支持通配符，最灵活，推荐使用
+* topic vs direct
+  * topic 交换机接收的消息 routing key 可以是多个单词，以`.`分隔
+  * topic 交换机与队列绑定的 binding key 可以指定通配符
+    * `#`：代表0个或多个单词
+    * `*`：代表1个单词

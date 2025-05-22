@@ -10,3 +10,4 @@ coding for work
 3. Work 模式：[Publisher](./rabbitmq/work-publisher)、[Consumer](./rabbitmq/work-consumer)
 4. Fanout 广播交换机：[Publisher](./rabbitmq/fanout-publisher)、[Consumer](./rabbitmq/fanout-consumer)
 5. Direct 路由交换机：[Publisher](./rabbitmq/direct-publisher)、[Consumer](./rabbitmq/direct-consumer)
+6. Topic 交换机：[Publisher](./rabbitmq/topic-publisher)、[Consumer](./rabbitmq/topic-consumer)
