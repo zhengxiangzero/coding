@@ -15,3 +15,7 @@
 * 多个 consumer 绑定同一个队列，加快消息处理
 * 同一条消息只会被一个 consumer 处理
 * **consumer** 设置 prefetch 参数控制消费者预取的消息数量，处理完一条再处理下一条，实现能者多劳
+### 4. Fanout 广播交换机：[Publisher](./fanout-publisher)、[Consumer](./fanout-consumer)
+* fanout 交换机：将消息广播到所有绑定的队列
+* consumer: 一个队列对应多个消费者，其实是一个服务的多个实例，一条消息只被一个消费者处理就行
+* queue: 多个队列对应多个微服务，每个微服务都能收到消息

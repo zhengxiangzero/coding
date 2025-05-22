@@ -25,6 +25,8 @@
         <module>springamqp-consumer</module>
         <module>work-publisher</module>
         <module>work-consumer</module>
+        <module>fanout-consumer</module>
+        <module>fanout-publisher</module>
     </modules>
 
     <repositories>

@@ -8,3 +8,4 @@ coding for work
 1. [官网 HelloWorld 示例](./rabbitmq/src/main/java/club/zhengxiang/coding/rabbitmq/helloworld/)
 2. Spring AMQP 示例：[Publisher](./rabbitmq/springamqp-publisher)、[Consumer](./rabbitmq/springamqp-consumer)
 3. Work 模式：[Publisher](./rabbitmq/work-publisher)、[Consumer](./rabbitmq/work-consumer)
+4. Fanout 广播交换机：[Publisher](./rabbitmq/fanout-publisher)、[Consumer](./rabbitmq/fanout-consumer)
